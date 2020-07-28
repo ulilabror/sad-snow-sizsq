@@ -16,7 +16,7 @@ const styles = theme => ({
     margin: theme.spacing(5)
   },
   padding: {
-    padding: theme.spacing(1)
+    padding: theme.spacing(3)
   }
 });
 
