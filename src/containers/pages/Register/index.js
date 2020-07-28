@@ -7,7 +7,9 @@ import {
   Button,
   Typography
 } from "@material-ui/core";
-import { Face, Fingerprint } from "@material-ui/icons";
+import EmailIcon from "@material-ui/icons/Email";
+import LockOpenIcon from "@material-ui/icons/LockOpen";
+
 const styles = theme => ({
   margin: {
     margin: theme.spacing.unit * 2
@@ -23,14 +25,14 @@ class Register extends React.Component {
     return (
       <Paper className={classes.padding}>
         <div className={classes.margin}>
+          <Grid container alignItems="center" justify="space-between">
+            <Typography gutterBottom variant="h5" component="h2">
+              Login
+            </Typography>
+          </Grid>
           <Grid container spacing={8} alignItems="flex-end">
-            <Grid container justify="center" style={{ marginTop: "10px" }}>
-              <Typography gutterBottom variant="h5" component="h2">
-                Register Page
-              </Typography>
-            </Grid>
             <Grid item>
-              <Face />
+              <EmailIcon />
             </Grid>
             <Grid item md={true} sm={true} xs={true}>
               <TextField
@@ -45,7 +47,7 @@ class Register extends React.Component {
           </Grid>
           <Grid container spacing={8} alignItems="flex-end">
             <Grid item>
-              <Fingerprint />
+              <LockOpenIcon />
             </Grid>
             <Grid item md={true} sm={true} xs={true}>
               <TextField
@@ -57,26 +59,14 @@ class Register extends React.Component {
               />
             </Grid>
           </Grid>
-          <Grid container alignItems="center" justify="space-between">
-            <Grid item>
-              <Button
-                disableFocusRipple
-                disableRipple
-                style={{ textTransform: "none" }}
-                variant="text"
-                color="primary"
-              >
-                Have account? Login!
-              </Button>
-            </Grid>
-          </Grid>
+
           <Grid container justify="center" style={{ marginTop: "10px" }}>
             <Button
               variant="outlined"
               color="primary"
               style={{ textTransform: "none" }}
             >
-              Register
+              Login
             </Button>
           </Grid>
         </div>
