@@ -25,7 +25,7 @@ class Register extends React.Component {
     return (
       <Paper className={classes.padding}>
         <div className={classes.margin}>
-          <Grid container alignItems="center" justify="space-between">
+          <Grid container justify="center" style={{ marginTop: "10px" }}>
             <Typography gutterBottom variant="h5" component="h2">
               Login
             </Typography>
@@ -66,7 +66,7 @@ class Register extends React.Component {
               color="primary"
               style={{ textTransform: "none" }}
             >
-              Login
+              Register
             </Button>
           </Grid>
         </div>
