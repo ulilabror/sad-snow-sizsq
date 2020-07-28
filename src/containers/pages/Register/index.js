@@ -20,6 +20,16 @@ const styles = theme => ({
 });
 
 class Register extends React.Component {
+  state = {
+    email: "",
+    password: ""
+  };
+  handleChangeText = e => {
+    this.setState({
+      [e.target.id]: e.target.value
+    });
+  };
+  handleRegisterSubmit = () => {};
   render() {
     const { classes } = this.props;
     return (
@@ -42,6 +52,7 @@ class Register extends React.Component {
                 fullWidth
                 autoFocus
                 required
+                onChange={this.handleChangeText}
               />
             </Grid>
           </Grid>
@@ -56,6 +67,7 @@ class Register extends React.Component {
                 type="password"
                 fullWidth
                 required
+                onChange={this.handleChangeText}
               />
             </Grid>
           </Grid>
@@ -65,6 +77,7 @@ class Register extends React.Component {
               variant="outlined"
               color="primary"
               style={{ textTransform: "none" }}
+              onClick={this.handleRegisterSubmit}
             >
               Register
             </Button>
