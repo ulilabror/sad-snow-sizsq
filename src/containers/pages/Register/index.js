@@ -9,13 +9,14 @@ import {
 } from "@material-ui/core";
 import EmailIcon from "@material-ui/icons/Email";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
+import firebase from "../../../config/firebase";
 
 const styles = theme => ({
   margin: {
-    margin: theme.spacing.unit * 2
+    margin: theme.spacing(5)
   },
   padding: {
-    padding: theme.spacing.unit
+    padding: theme.spacing(1)
   }
 });
 
@@ -29,7 +30,22 @@ class Register extends React.Component {
       [e.target.id]: e.target.value
     });
   };
-  handleRegisterSubmit = () => {};
+  handleRegisterSubmit = () => {
+    const { email, password } = this.state;
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(res => {
+        console.log("success: ", res);
+      })
+      .catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
+        console.log(errorCode, errorMessage);
+      });
+  };
   render() {
     const { classes } = this.props;
     return (
