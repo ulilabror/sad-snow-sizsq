@@ -53,7 +53,7 @@ class Register extends React.Component {
         <div className={classes.margin}>
           <Grid container justify="center" style={{ marginTop: "10px" }}>
             <Typography gutterBottom variant="h5" component="h2">
-              Login
+              Register
             </Typography>
           </Grid>
           <Grid container spacing={8} alignItems="flex-end">
