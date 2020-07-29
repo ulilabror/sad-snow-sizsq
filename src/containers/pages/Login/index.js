@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 class Login extends Component {
   render() {
@@ -11,5 +12,13 @@ class Login extends Component {
     );
   }
 }
+const reduxState = state => {
+  return {
+    popupProps: state.popup
+  };
+};
 
-export default Login;
+export default connect(
+  reduxState,
+  null
+)(Login);
